@@ -1,3 +1,61 @@
+<?php
+ include('connect.php');
+    
+    if (isset($_POST['join'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phoneno = $_POST['phoneno'];
+        $domain = $_POST['domain'];  
+
+        $sql = "SELECT * FROM users WHERE email='$email'";
+            $result = mysqli_query($conn, $sql);
+            if (!$result->num_rows > 0) {
+                $sql = "INSERT INTO `users`(`name`,`email`,`phoneno`,`domain`) VALUES('$name','$email','$phoneno','$domain')";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    echo "<script>alert('YOU JOINED SUCCESSFULLY!!')</script>";
+                    $mobileno = "";
+                    $email = "";
+                    $_POST['password'] = "";
+                    
+                } else {
+                    echo "<script>alert('UNABLE TO JOIN, TRY AGAIN!')</script>";
+                }
+            } else {
+                echo "<script>alert('Woops! Email Already Exists.')</script>";
+            }
+
+        
+            
+    } 
+?>
+
+<?php
+ include('connect.php');
+    
+    if (isset($_POST['contact'])) {
+
+        
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $msg = $_POST['msg'];  
+
+        $sql = $conn->query("INSERT INTO `contact`(`name`,`email`,`msg`) VALUES('$name','$email','$msg')");
+       
+        if($sql == true)
+        {
+            echo "<script>alert('WE GOT YOUR MESSAGE')</script>";
+            header('location:index.php');
+
+        }
+        else{
+            echo "<script>alert(' MESSAGE not sent')</script>";
+        }
+            
+            
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +70,8 @@
   <section id="logo">
     <div class="logo">
       <img src="./images/finallogo.png">
-  
     </div>
-
-
+    
   </section>
 
 
@@ -44,6 +100,7 @@
               <li><a href="#contact" data-after="contact">Contact Us</a></li>
             </ul>
           </div>
+          
         </div>
       </div>
     </section>
@@ -194,13 +251,43 @@
 
 <!--REG-->
 <section id="reg">
-  <div class="reg">
-    <h1 class="section-title">reg<span>i</span>strat<span>a</span>tion</h1>
-  </div>
-  <p>you are at the perfect spot. register to be a part of optizen and grow your skills with us and make yourself prepared for the upcoming challenges in life.</p>
-  <a href="https://tinyurl.com/optizen-registration" type="botton" class="ctb">join</a>
+  <div class="reg container">
+    <div>
+      <h1 class="section-title">reg<span>i</span>str<span>a</span>tion</h1>
+    </div>
+    <p>you are at the perfect spot. register to be a part of optizen and grow your skills with us and make yourself prepared for the upcoming challenges in life.</p>
+  
+    <div class="regform">
+      <form action="" method="POST" target="">
+        <h3>Register Here</h3>
+        <div class="inputBox">
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div class="inputBox">
+          <input type="text" name="email" placeholder="Email">
+        </div>
+        <div class="inputBox">
+          <input type="text" name="phoneno" placeholder="Phone-Number">
+        </div>
+        <div class="inputBox"  >
+          <select name="domain" id="domain" >
+            <option disabled selected value> --select--</option>
+            <option value="OPTICS AND SPECTROSCOPY">OPTICS AND SPECTROSCOPY</option>
+            <option value="OPTICAL SENSORS">OPTICAL SENSORS</option>
+            <option value="OPTICAL MATARIALS">OPTICAL MATARIALS</option>
+            <option value="COMMUNICATION">COMMUNICATION</option>
+            <option value="ML,AI,CODING">ML, AI, CODING</option>
+          </select>
+        </div>
+        
+        <div class="inputBox">
+          <input type="submit" name="join" value="Join Us">
+        </div>
+      </form>
+    </div>
+  </div> 
 
-  </div>
+  
 </section>
 
 
@@ -280,8 +367,26 @@
   <div class="contact container">
     <div>
       <h1 class="section-title">CONtact <span>us</span></h1>
-
     </div>
+    
+      <div class="contactform">
+        <h3>Send Message</h3>
+        <form action="" method="POST" target="_blank">
+        <div class="inputBox">
+          <input type="text" name="name" placeholder="Name">
+        </div>
+        <div class="inputBox">
+          <input type="text" name="email" placeholder="Email">
+        </div>
+        <div class="inputBox">
+          <textarea name="msg" id="mes" placeholder="Message" cols="" rows="4"></textarea>
+        </div>
+        <div class="inputBox">
+          <input type="submit" name="contact" value="Send">
+        </div> 
+        </form> 
+      </div>
+   
     <div class="contact-items">
       <div class="contact-item">
         <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/phone-not-being-used.png"/></div>

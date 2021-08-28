@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+   
 
 }
 html{
@@ -45,7 +46,7 @@ a{
     width: fit-content;
     font-size: 2rem;
     position: relative;
-    color: rgba(255, 255, 255, 0.582);
+    color:#fff;
     
 }
 
@@ -55,7 +56,7 @@ a{
     padding: 10px 30px ;
     color: crimson;
     background-color: transparent;
-    border: 2px solid cornflowerblue;
+    border: 2px solid white;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
@@ -66,7 +67,8 @@ a{
 }
 #hero .cta:hover{
     color: white;
-    background-color: crimson;
+    background-color:crimson;
+    border: none;
 }
  p{
     font-size: 1.4rem;
@@ -78,7 +80,9 @@ a{
 
 }
 
-#domain{}
+#domain{
+    background-color: #fff;
+}
     
    #domain .domain{
        flex-direction: column;
@@ -486,47 +490,79 @@ img{
     color: rgba(0, 0, 0, 0.658);
     text-overflow: ellipsis;
     text-shadow: crimson;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 30px;
     letter-spacing: 0.2rem;
     font-style: oblique;
 
     
 }
-#reg .ctb{
-    display: inline-block;
-    padding: 10px 30px ;
-    color: crimson;
-    background-color: transparent;
-    border: 2px solid cornflowerblue;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 36px;
-    transition: .3s ease;
-    transition-property: background-color, color;
-    margin-left: 200px;
-    margin-bottom: 30px;
-    margin-top: 1px;
-   
-}
-#reg .ctb:hover{
-    color: white;
-    background-color: crimson;
-}
+
 #contact .contact{
     flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1500px;
+    margin: 0 0;
+    background-color: #fff;
+    background-size: cover;
 
 
 }
+#contact .contact .contactform{
+    padding: 50px 50px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-top: 15px;
+
+}
+#contact .contact .contactform h3{
+    color: #111;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    
+}
+
+
+.contactform .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactform .inputBox input,
+.contactform .inputBox textarea{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    resize: none;
+}
+.contactform .inputBox input[type="submit"]{
+    font-size: 1.5em; 
+    color: #fff;
+    background: #00a0d1 ;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+
+}
+
 #contact .contact-items{
     width: 300px;
-   
-
+    color: black;
 }
 #contact .contact-item{
+    background-color: white;
+  
     width: 80%;
     padding: 20px;
     text-align: center;
@@ -560,7 +596,7 @@ img{
     line-height: 2rem;
 }
 #contact .contact-item:hover{
-    box-shadow: 0px 0px 5px 0px #0000002c;
+    box-shadow: 0px 5px 10px 5px #0000002c;
 
 }
 #footer{
@@ -622,14 +658,10 @@ img{
     position: relative;
     margin-bottom: 20px;
     margin-top: 30px;
-    margin-left: 100px;
-    
-    
-    
-    
-    
+    margin-left: 100px;    
 
 }
+
 @media only screen and (min-width: 750px) {
     #hero .cta {
         font-size: 2rem;
@@ -716,13 +748,72 @@ img{
  flex-direction: row-reverse;
  }
  
+ #reg .reg{
+    background-color: #fff;
+    margin: 0 0;
+    flex-direction: column;
+    background-size: cover;
+    max-width: 1500px;
+ }
 
- #reg p{
+ #reg .reg p{
      font-size: 2.5rem;
      padding: 80px;
      text-align: center;
      font-style: oblique;
  }
+ #reg .reg .regform{
+    padding: 60px 50px;
+    background-color: #FFF;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 10px;
+    align-items: center;
+
+}
+#reg .reg .regform h3{
+    color: #111;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    
+}
+
+
+.regform .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.regform .inputBox input,
+.regform .inputBox select{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    resize: none;
+    
+}
+.regform .inputBox input[type="submit"]{
+    font-size: 1.5em; 
+    padding: 10px;
+    color: #fff;
+    background: #00a0d1 ;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+
+}
+
  #reg  .ctb{
    align-content: center; 
    position: absolute;  
@@ -834,18 +925,75 @@ object-fit: contain;
        text-align: center;
      
      
+    }
+    #reg .reg{
+        background-color: #fff;
+        margin: 0 0;
+        flex-direction: column;
+        background-size: cover;
+        max-width: 1500px;
      }
-      #reg p{
-        
-     font-size: 2.5rem;
-     
-     font-style: oblique;
-     text-align: center;
-          
-
-        
+    
+     #reg .reg p{
+         font-size: 2.5rem;
+         padding: 80px;
+         text-align: center;
+         font-style: oblique;
+     }
+     #reg .reg .regform{
+        padding: 70px 70px;
+        background-color: #FFF;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 15px;
+        align-items: center;
+    
+    }
+    #reg .reg .regform h3{
+        color: #111;
+        font-size: 2.5em;
+        margin-bottom: 20px;
         
     }
+    
+    
+    .regform .inputBox{
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .regform .inputBox input,
+    .regform .inputBox select{
+        width: 100%;
+        border: 1px solid #555;
+        padding: 10px;
+        color: #111;
+        outline: none;
+        font-size: 14px;
+        font-weight: 500;
+        resize: none;
+        
+    }
+    .regform .inputBox input[type="submit"]{
+        font-size: 1.5em; 
+        padding: 10px;
+        color: #fff;
+        background: #00a0d1 ;
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        max-width: 100px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+    
+    }
+    
+    
+    
 
 
 }
@@ -860,7 +1008,7 @@ object-fit: contain;
     
 }
 #header .header{
-	min-height: 8vh;
+	min-height: 10vh;
 	background-color: rgba(31, 30, 30, 0.24);
 	transition: .3s ease background-color;
 }
@@ -870,8 +1018,8 @@ object-fit: contain;
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	max-width: 1000px;
-	padding: 0 10px;
+	max-width: 1500px;
+	padding: -10px 10px;
 }
 #header .nav-list ul {
 	list-style: none;
@@ -893,7 +1041,7 @@ object-fit: contain;
 	left: 0%;
 }
 #header .nav-list ul a {
-	font-size: 2.5rem;
+	font-size: 4rem;
 	font-weight: 500;
 	letter-spacing: .2rem;
 	text-decoration: none;
@@ -921,6 +1069,7 @@ object-fit: contain;
 #header .nav-list ul li:hover a {
 	color: crimson;
 }
+
 #header .hamburger {
 	height: 60px;
 	width: 60px;
@@ -1023,6 +1172,71 @@ object-fit: contain;
     background-position: center;
     
 }
+#reg .reg{
+    background-color: #fff;
+    margin: 0 0;
+    flex-direction: column;
+    background-size: cover;
+    max-width: 1500px;
+ }
+
+ #reg .reg p{
+     font-size: 2.5rem;
+     padding: 80px;
+     text-align: center;
+     font-style: oblique;
+ }
+ #reg .reg .regform{
+    padding: 70px 70px;
+    background-color: #FFF;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 15px;
+    align-items: center;
+
+}
+#reg .reg .regform h3{
+    color: #111;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    
+}
+
+
+.regform .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.regform .inputBox input,
+.regform .inputBox select{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    resize: none;
+    
+}
+.regform .inputBox input[type="submit"]{
+    font-size: 1.5em; 
+    padding: 10px;
+    color: #fff;
+    background: #00a0d1 ;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+
+}
 
 
 
@@ -1108,4 +1322,4 @@ object-fit: contain;
         
     }
  
-  
+}
